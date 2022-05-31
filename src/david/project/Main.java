@@ -26,10 +26,10 @@ public class Main {
 
         do{
             System.out.println("\t\nMenu");
-            System.out.println("1 Current balance");
+            System.out.println("1 Your Account");
             System.out.println("2 Deposit");
             System.out.println("3 Withdrawal");
-            System.out.println("4 Your account");
+            System.out.println("4 Your balance");
             System.out.println("5 Initiate Transaction");
             System.out.println("6 View transaction list");
             System.out.println("7 Find transaction by IBAN");
@@ -40,7 +40,7 @@ public class Main {
             op = in.nextInt();
             System.out.println();
             switch (op) {
-                case 1 -> {
+                case 4 -> {
                     System.out.println("\tYour balance is: " + user1.getAccount().getCurrentAmount() + " " + user1.getAccount().getCurrencyType());
                 }
                 case 2 -> {
@@ -57,7 +57,7 @@ public class Main {
                     amount = in.nextDouble();
                     user1.getAccount().withdrawal(amount);
                 }
-                case 4 -> {
+                case 1 -> {
                     System.out.println("\tYour Account");
                     System.out.println(user1);
                 }
@@ -73,6 +73,7 @@ public class Main {
                     amount = in.nextDouble();
                     user1.getAccount().transferMoney(IBAN_beneficiary, amount, nameOfBeneficiary);
                 }
+
                 case 6 -> {
                     System.out.println("\tTransactions List");
                     user1.getAccount().viewListOfTransaction();
